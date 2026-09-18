@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Totobola System Filler",
+  "version": "1.0.0",
+  "description": "Fills the Totobola betting grid on jogossantacasa.pt from reduced Duplas/Triplas systems. Never submits or pays for a bet — you always review and confirm yourself.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Totobola System Filler"
+  },
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://www.jogossantacasa.pt/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.jogossantacasa.pt/web/JogarTotobola/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

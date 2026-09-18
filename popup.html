@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Totobola System Filler</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        width: 380px;
+        padding: 10px;
+        font-size: 13px;
+        color: #222;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      h1 {
+        font-size: 14px;
+        margin: 0;
+      }
+      #langToggle {
+        font-size: 11px;
+        padding: 3px 8px;
+        cursor: pointer;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        background: #fff;
+      }
+      .notice {
+        background: #fff3cd;
+        border: 1px solid #ffe08a;
+        padding: 6px 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        font-size: 11.5px;
+        line-height: 1.4;
+      }
+      .row-game {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 3px;
+      }
+      .row-game .label {
+        flex: 0 0 150px;
+        font-size: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .row-game select {
+        flex: 1;
+        font-size: 12px;
+      }
+      #super14Row {
+        margin: 6px 0 8px;
+        padding-top: 6px;
+        border-top: 1px dashed #ccc;
+      }
+      #super14Row select {
+        font-size: 12px;
+      }
+      .matches {
+        font-size: 12px;
+        margin: 8px 0 4px;
+      }
+      .matches label {
+        display: block;
+        margin: 2px 0;
+      }
+      #variantWrap {
+        margin-bottom: 6px;
+      }
+      .status {
+        margin-top: 8px;
+        padding: 6px;
+        background: #f4f4f4;
+        border-radius: 4px;
+        font-size: 12px;
+        white-space: pre-wrap;
+        min-height: 2em;
+      }
+      button {
+        margin-top: 6px;
+        margin-right: 4px;
+        padding: 6px 10px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      hr {
+        margin: 10px 0;
+        border: none;
+        border-top: 1px solid #ddd;
+      }
+      #availableSystemsTitle {
+        font-size: 12.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      #availableSystemsList {
+        font-size: 11.5px;
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 id="titleText">Totobola System Filler</h1>
+      <button id="langToggle" type="button">PT</button>
+    </div>
+    <div class="notice" id="noticeText"></div>
+
+    <div id="games">
+      <em id="gamesPlaceholder"></em>
+    </div>
+
+    <div id="super14Row">
+      <span id="super14Label"></span>
+      <select id="superSelect">
+        <option value="" id="super14DontSetOpt"></option>
+        <option value="1">1</option>
+        <option value="X">X</option>
+        <option value="2">2</option>
+      </select>
+    </div>
+
+    <div class="matches">
+      <div id="matchingSystemsLabel"></div>
+      <div id="systemChoices"></div>
+    </div>
+
+    <div id="variantWrap" style="display: none">
+      <span id="variantLabel"></span> <select id="variantSelect"></select>
+    </div>
+
+    <hr />
+
+    <button id="btnRefresh"></button>
+    <button id="btnFillNext"></button>
+    <button id="btnReset"></button>
+
+    <div class="status" id="status"></div>
+
+    <hr />
+
+    <div id="availableSystemsTitle"></div>
+    <ul id="availableSystemsList"></ul>
+
+    <script src="i18n.js"></script>
+    <script src="systems.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
